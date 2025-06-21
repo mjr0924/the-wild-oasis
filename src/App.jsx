@@ -47,8 +47,3 @@ function App() {
 }
 
 export default App;
-/*
- npm i date-fns
- add new Cabin(supabase) neme : 002 , maxCapacity :4 , regularPrice : 400 , 
- discout :75 , discription : test image : empty and seve 
-*/

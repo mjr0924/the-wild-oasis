@@ -34,11 +34,10 @@ function CabinTable() {
     data: cabins,
     error,
   } = useQuery({
-    queryKey: ["cabin"],
+    queryKey: ["cabins"],
     queryFn: getCabins,
   });
-
-  // if (isLoading) return <Spinner />;
+  if (isLoading) return <Spinner />;
 
   return (
     <Table role="table">
@@ -56,5 +55,4 @@ function CabinTable() {
     </Table>
   );
 }
-
 export default CabinTable;
