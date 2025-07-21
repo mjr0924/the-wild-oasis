@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { getCabins } from "../../services/apiCabins";
 import Spinner from "../../ui/Spinner";
 import CabinRow from "./CabinRow";
+import Empty from "../../ui/Empty";
 
 const Table = styled.div`
   border: 1px solid var(--color-grey-200);
@@ -38,6 +39,7 @@ function CabinTable() {
     queryFn: getCabins,
   });
   if (isLoading) return <Spinner />;
+  if (!cabins.length) return <Empty resourceName="cabins" />;
 
   return (
     <Table role="table">
