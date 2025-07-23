@@ -23,19 +23,15 @@ const Box = styled.div`
   border-radius: var(--border-radius-md);
   padding: 2.4rem 4rem;
 `;
-
 function CheckinBooking() {
   const [confirmPaid, setConfirmPaid] = useState(false);
   const [addBreakfast, setAddBreakfast] = useState(false);
   const { booking, isLoading } = useBooking();
   const { settings, isLoading: isLoadingSettings } = useSettings();
-
   useEffect(() => setConfirmPaid(booking?.isPaid ?? false), [booking]);
   const moveBack = useMoveBack();
   const { checkin, isCheckingIn } = useCheckin();
-
   if (isLoading || isLoadingSettings) return <Spinner />;
-
   const {
     id: bookingId,
     guests,
@@ -47,7 +43,6 @@ function CheckinBooking() {
 
   const optionalBreakfastPrice =
     settings.breakfastPrice * numNights * numGuests;
-
   function handleCheckin() {
     if (!confirmPaid) return;
     if (addBreakfast) {
