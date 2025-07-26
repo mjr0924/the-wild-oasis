@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 export function useLogin() {
   const navigate = useNavigate();
 
-  const { mutate: login, isLoading } = useMutation({
+  const { mutate: login, isPending } = useMutation({
     mutationFn: ({ email, password }) =>
       loginApi({
         email,
@@ -18,9 +18,9 @@ export function useLogin() {
     },
 
     onError: (err) => {
-      toast.error("Privided email or password are incorrect");
+      toast.error("Provided email or password are incorrect");
     },
   });
 
-  return { login, isLoading };
+  return { login, isLoading: isPending };
 }

@@ -4,7 +4,7 @@ import Form from "../../ui/Form";
 import Input from "../../ui/Input";
 import FormRowVertical from "../../ui/FormRow";
 import { useLogin } from "./useLogin";
-import Spinner from "../../ui/Spinner";
+import SpinnerMini from "../../ui/SpinnerMini";
 
 function LoginForm() {
   const [email, setEmail] = useState("jonas@example.com");
@@ -42,7 +42,7 @@ function LoginForm() {
       </FormRowVertical>
       <FormRowVertical>
         <Button size="large" disabled={isLoading}>
-          {!isLoading ? "Log in" : <Spinner />}
+          {!isLoading ? "Log in" : <SpinnerMini />}
         </Button>
       </FormRowVertical>
     </Form>
