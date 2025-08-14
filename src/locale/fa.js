@@ -1,0 +1,18 @@
+export const fa = {
+  home: "خانه",
+  bookings: "رزروها",
+  cabins: "کابین‌ها",
+  users: "کاربرها",
+  settings: "تنظیمات",
+  dashboard: "داشبورد",
+  sales: "فروش",
+  "check-ins": "ورود مهمانان",
+  "occupancy-rate": "نرخ اشغال",
+  "stay-duration-summary": "خلاصه مدت اقامت",
+  today: "امروز",
+  "no-activity-today": "...امروز هیچ فعالیتی وجود ندارد",
+  "sales-from": "فروش از",
+  "last-7-days": "7 روز گذشته",
+  "last-30-days": "30 روز گذشته",
+  "last-90-days": "90 روز گذشته",
+};

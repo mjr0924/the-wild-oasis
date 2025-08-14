@@ -9,6 +9,7 @@ import {
   Tooltip,
 } from "recharts";
 import { useDarkMode } from "../../context/DarkModeContext";
+import { useTranslation } from "react-i18next";
 
 const ChartBox = styled.div`
   /* Box */
@@ -145,10 +146,11 @@ function DurationChart({ confirmedStays }) {
   const { isDarkMode } = useDarkMode();
   const startData = isDarkMode ? startDataDark : startDataLight;
   const data = prepareData(startData, confirmedStays);
+  const { t } = useTranslation();
 
   return (
     <ChartBox>
-      <Heading as="h2">Stay duration summary</Heading>
+      <Heading as="h2">{t('stay-duration-summary')}</Heading>
       <ResponsiveContainer width="100%" height={240}>
         <PieChart>
           <Pie

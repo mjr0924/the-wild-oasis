@@ -5,6 +5,7 @@ import Row from "../../ui/Row";
 import { useTodayActivity } from "./useTodayActivity";
 import Spinner from "../../ui/Spinner";
 import TodayItem from "./TodayItem";
+import { useTranslation } from "react-i18next";
 
 const StyledToday = styled.div`
   /* Box */
@@ -41,10 +42,11 @@ const NoActivity = styled.p`
 
 function TodayActivity() {
   const { isPending, activities } = useTodayActivity();
+  const { t } = useTranslation();
   return (
     <StyledToday>
       <Row type="horizontal">
-        <Heading as="h2">Today</Heading>
+        <Heading as="h2">{t('today')}</Heading>
       </Row>
 
       {!isPending ? (
@@ -55,7 +57,7 @@ function TodayActivity() {
             ))}
           </TodayList>
         ) : (
-          <NoActivity>No activity today ...</NoActivity>
+          <NoActivity>{t('no-activity-today')}</NoActivity>
         )
       ) : (
         <Spinner />

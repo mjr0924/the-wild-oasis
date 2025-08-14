@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import HeaderMenu from "./HeaderMenu";
 import UserAvatar from "../features/authentication/UserAvatar";
+import { useTranslation } from "react-i18next";
 
 const StyledHeader = styled.header`
   background-color: var(--color-grey-0);
@@ -13,8 +14,21 @@ const StyledHeader = styled.header`
 `;
 
 function Header() {
+  const {
+    i18n: { changeLanguage, language, dir },
+  } = useTranslation();
+
+  const onChangeLocale = (e) => {
+    const { value } = e.target;
+    changeLanguage(value);
+  };
+
   return (
-    <StyledHeader>
+    <StyledHeader dir={dir()}>
+      <select onChange={onChangeLocale} value={language}>
+        <option value="en">🇺🇸 English</option>
+        <option value="fa">🇮🇷 Persian</option>
+      </select>
       <UserAvatar />
       <HeaderMenu />
     </StyledHeader>

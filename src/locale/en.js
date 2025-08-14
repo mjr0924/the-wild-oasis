@@ -1,0 +1,18 @@
+export const en = {
+  home: "Home",
+  bookings: "Bookings",
+  cabins: "Cabins",
+  users: "Users",
+  settings: "Settings",
+  dashboard: "Dashboard",
+  sales: "Sales",
+  "check-ins": "Check ins",
+  "occupancy-rate": "Occupancy rate",
+  "stay-duration-summary": "Stay duration summary",
+  today: "Today",
+  "no-activity-today": "No activity today ...",
+  "sales-from": "Sales from",
+  "last-7-days": "Last 7 days",
+  "last-30-days": "Last 30 days",
+  "last-90-days": "Last 90 days",
+};

@@ -12,6 +12,7 @@ import {
 } from "recharts";
 import { useDarkMode } from "../../context/DarkModeContext";
 import { eachDayOfInterval, format, isSameDay, subDays } from "date-fns";
+import { useTranslation } from "react-i18next";
 
 const StyledSalesChart = styled(DashboardBox)`
   grid-column: 1 / -1;
@@ -88,11 +89,11 @@ function SalesChart({ bookings, numDays }) {
         text: "#374151",
         background: "#fff",
       };
-
+  const { t } = useTranslation();
   return (
     <StyledSalesChart>
       <Heading as="h2">
-        Sales from {format(allDates.at(0), "MMM dd yyyy")} &mdash;{" "}
+        {t("sales-from")} {format(allDates.at(0), "MMM dd yyyy")} &mdash;{" "}
         {format(allDates.at(-1), "MMM dd yyyy")}
       </Heading>
       <ResponsiveContainer height={300} width="100%">
