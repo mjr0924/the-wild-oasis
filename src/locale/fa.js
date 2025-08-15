@@ -15,4 +15,5 @@ export const fa = {
   "last-7-days": "7 روز گذشته",
   "last-30-days": "30 روز گذشته",
   "last-90-days": "90 روز گذشته",
+  "update-hotel-settings": "به‌روزرسانی تنظیمات هتل",
 };

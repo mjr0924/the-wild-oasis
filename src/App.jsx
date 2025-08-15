@@ -16,6 +16,8 @@ import Booking from "./pages/Booking";
 import Checkin from "./pages/Checkin";
 import ProtectedRoute from "./ui/ProtectedRoute";
 import { DarkModeProvider } from "./context/DarkModeContext";
+import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -27,6 +29,14 @@ const queryClient = new QueryClient({
 });
 
 function App() {
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    document.documentElement.setAttribute(
+      "dir",
+      i18n.language === "fa" ? "rtl" : "ltr"
+    );
+  }, [i18n.language]);
   return (
     <DarkModeProvider>
       <QueryClientProvider client={queryClient}>

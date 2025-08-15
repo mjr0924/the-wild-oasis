@@ -15,4 +15,5 @@ export const en = {
   "last-7-days": "Last 7 days",
   "last-30-days": "Last 30 days",
   "last-90-days": "Last 90 days",
+  "update-hotel-settings": "Update hotel settings",
 };
